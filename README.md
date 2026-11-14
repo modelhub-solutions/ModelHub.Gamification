@@ -47,7 +47,7 @@ Each school is a tenant. Learners earn points like this:
 
 Northbridge Academy changes two things:
 
-- It adds 10 points for lessons finished before 7am, in its own time zone.
+- It adds 10 points for lessons finished before 7am UK time, the platform's time zone.
 - It caps earning at 300 points a day.
 
 A learner spends 500 points on a 1:1 tutor session and reads the code `RW-7K3QX9` to staff. If staff cancel the session, the points come back once and the slot returns to stock.
@@ -215,7 +215,7 @@ var status = Achievements.Evaluate(definitions, new Dictionary<string, long>
 | Option | Default | |
 |---|---|---|
 | `DefaultRules` | none | Rules every tenant earns with |
-| `TimeZone` | UTC | Days and weeks for limits, caps, `localHour` and `dayOfWeek` |
+| `TimeZone` | UTC | Days and weeks for limits, caps, `localHour` and `dayOfWeek`. One time zone for the whole app: tenants can't have their own yet |
 | `FirstDayOfWeek` | Monday | When weekly caps reset |
 | `Levels` | `LevelTable.Default` | Levels by lifetime points |
 | `RedemptionCodePrefix` | `RW-` | Codes avoid 0/O and 1/I, so people can read them out loud |

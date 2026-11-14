@@ -169,7 +169,7 @@ internal static class School
         await programs.SaveSettingsAsync(new PointsProgram { TenantId = Northbridge, DailyEarnCap = 300, PointsExpireAfterDays = 365 });
 
         // Overriding an event type replaces all its defaults, so Northbridge restates the 50-point lesson
-        // and adds an early-bird bonus before 7am in its time zone.
+        // and adds an early-bird bonus before 7am UK time. All schools share the platform's TimeZone.
         await programs.SaveRuleAsync(new PointsRule { TenantId = Northbridge, EventType = "LessonCompleted", Points = 50, MaxPerDay = 3 });
         await programs.SaveRuleAsync(new PointsRule
         {
