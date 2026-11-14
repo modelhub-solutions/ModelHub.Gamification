@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
+    <PackageId>ModelHub.Gamification.EntityFrameworkCore</PackageId>
+    <Description>A points and rewards engine for ASP.NET Core and EF Core. Your app reports what users do; rules decide the points; a ledger keeps every change; users spend points on rewards your business funds.
+
+What you get:
+• Points engine: rules per event type with JSON conditions, per-day limits, and daily and weekly caps. Platform defaults, with per-tenant overrides.
+• Pays once: an event type and reference credit at most once per user, enforced by a unique index, so retries and duplicate messages never double-pay.
+• Ledger-based wallets: every earn, spend, refund, expiry and adjustment is a row. Balances use optimistic concurrency, so two spends can't overdraw.
+• Rewards: a catalogue with stock and availability windows, redemption codes to show at the desk, staff fulfilment or instant rewards, cancel with refund, and automatic expiry of uncollected rewards.
+• Points expiry, staff adjustments with a note, levels from lifetime points, and programme stats.
+
+Example: an online learning platform
+Each school is a tenant. Learners earn 50 points per lesson (up to 3 a day), 20 for a quiz scored 80 or more, and 150 for a 7-day streak. Northbridge Academy adds 10 points for lessons before 7am in its own time zone and caps earning at 300 a day. A learner spends 500 points on a 1:1 tutor session and reads the code RW-7K3QX9 to staff. If staff cancel it, the points come back once, and the slot returns to stock.
+
+Call modelBuilder.ApplyGamificationModel() and services.AddGamification&lt;AppDb&gt;(). Targets .NET 8 (EF Core 8) and .NET 10 (EF Core 10). Works with any EF Core relational provider.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ModelHub.Gamification\ModelHub.Gamification.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.23" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net10.0'">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="ModelHub.Gamification.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>

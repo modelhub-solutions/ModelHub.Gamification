@@ -1,0 +1,40 @@
+@host = http://localhost:5000
+
+### A lesson: 50 points (60 before 7am UK time)
+POST {{host}}/users/ada/lessons/fractions-1/complete
+
+### A quiz scored 85: 20 points. Try score=70 for none.
+POST {{host}}/users/ada/quizzes/fractions-quiz/submit?score=85
+
+### Balance, lifetime points and level
+GET {{host}}/users/ada/points
+
+### Points history, newest first
+GET {{host}}/users/ada/history
+
+### Achievements
+GET {{host}}/users/ada/achievements
+
+### The reward catalogue (copy a reward id from here)
+GET {{host}}/rewards
+
+### Redeem a reward: returns a code such as RW-7K3QX9
+POST {{host}}/users/ada/rewards/PASTE-REWARD-ID/redeem
+
+### Staff: pending redemptions
+GET {{host}}/admin/redemptions?status=Pending
+
+### Staff: hand it over, or cancel it (cancelling refunds the points once)
+POST {{host}}/admin/redemptions/PASTE-REDEMPTION-ID/fulfil?staff=front-desk
+
+### Staff: a correction with a reason
+POST {{host}}/admin/users/ada/adjust?staff=front-desk
+Content-Type: application/json
+
+{ "points": 25, "note": "Lesson credit missed during the outage" }
+
+### Staff: the rules as they apply to Northbridge Academy
+GET {{host}}/admin/rules
+
+### Staff: programme stats
+GET {{host}}/admin/stats

@@ -1,0 +1,22 @@
+<Project>
+  <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+
+  <!-- Package metadata shared by the library projects under src/ -->
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <Version>0.1.0</Version>
+    <Authors>Kehinde Olosunde</Authors>
+    <Company>ModelHub Solutions Ltd</Company>
+    <Copyright>Copyright (c) 2026 ModelHub Solutions Ltd</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>gamification;points;rewards;loyalty;streaks;levels;achievements;ledger;efcore;aspnetcore</PackageTags>
+    <RepositoryUrl>https://github.com/modelhub-solutions/ModelHub.Gamification</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/modelhub-solutions/ModelHub.Gamification</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+</Project>

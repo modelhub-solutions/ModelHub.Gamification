@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
+    <PackageId>ModelHub.Gamification</PackageId>
+    <Description>The building blocks of a points and rewards programme for .NET, with no dependencies: rule conditions, levels, streaks and achievements.
+
+• RuleConditions: match a rule's JSON condition against an event, e.g. {"score":{"gte":80}} or {"localHour":{"lt":7}}.
+• LevelTable: points thresholds to levels, with progress to the next level.
+• Streaks: current and longest runs of active days, and a week view.
+• Achievements: unlock badges from lifetime metrics, with progress.
+• GamificationOptions: default earning rules, time zone, levels and redemption settings.
+
+Use ModelHub.Gamification.EntityFrameworkCore for the points engine, wallet ledger, caps, reward catalogue and redemption flow.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="ModelHub.Gamification.EntityFrameworkCore" />
+    <InternalsVisibleTo Include="ModelHub.Gamification.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
