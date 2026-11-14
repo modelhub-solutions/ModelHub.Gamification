@@ -12,6 +12,8 @@ Users spend their points on rewards that your business funds.
 
 Extracted from the rewards engine in the [StrideWell](https://stridewell.app) API, a multi-tenant SaaS platform for gyms and coaches.
 
+**Write-up:** [Points += 50 is a bug: a rewards engine for .NET that never pays twice](https://dev.to/olosunde_kehinde_e4f0c25d/points-50-is-a-bug-a-rewards-engine-for-net-that-never-pays-twice-28me) on dev.to walks through each failure the engine prevents, with code.
+
 ```
 dotnet add package ModelHub.Gamification.EntityFrameworkCore
 ```
