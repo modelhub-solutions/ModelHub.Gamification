@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0 (unreleased)
+## 0.1.0 (14 Nov 2026)
 
 First public release, extracted from the rewards engine in the StrideWell API.
 
